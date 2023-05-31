@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   private buildForm(): void {
     this.loginForm = this.formBuilder.group({
       username: [null, Validators.required],
-      email: [null, Validators.required]
+      email: [null, [Validators.required, Validators.email]]
     })
   }
 

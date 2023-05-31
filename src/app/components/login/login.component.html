@@ -8,8 +8,9 @@
       <small class="text-danger" *ngIf="(loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched)">User name is required.</small>
 
 
-      <input class="okoora-input" formControlName="email" type="text" placeholder="email">
+      <input class="okoora-input" formControlName="email" type="email" placeholder="email">
       <small class="text-danger" *ngIf="(loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched)">Email is required.</small>
+      <small class="text-danger" *ngIf="(loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched)">Email is incorrect.</small>
 
       <button type="submit" class="yellow-btn my-15">login</button>
     </div>

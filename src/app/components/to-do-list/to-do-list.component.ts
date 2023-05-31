@@ -22,6 +22,9 @@ export class ToDoListComponent implements OnInit{
   showListOptions: any[] = [5, 15, 25, 'all'];
   optionForm!: FormGroup;
   lengthTodos: any;
+  completedTodo: number = 0;
+  notCompletedTodo: number = 0;
+
 
   constructor(public toDoListService: ToDoListService,
               public loginService: LoginService,
@@ -39,10 +42,14 @@ export class ToDoListComponent implements OnInit{
 
   }
 
+
+
   filterTodosByUser() {
     this.userId = this.loginService.getUser()?.id;
     this.filteredTodosByUserId =  this.todos.filter((todo) => todo.userId === this.userId);
     this.filteredTdos = this.filteredTodosByUserId ;
+    this.completedTodo = this.filteredTodosByUserId.filter((todo) => todo.completed == true).length || 0;
+    this.notCompletedTodo = this.filteredTodosByUserId.length ? this.filteredTodosByUserId.length - this.completedTodo : 0;
   }
 
   showListOption() {
@@ -67,9 +74,9 @@ export class ToDoListComponent implements OnInit{
   changeTodoStatus(todo: Todos) {
     todo.completed = !todo.completed
     this.showListOption()
+    this.completedTodo = this.filteredTodosByUserId?.filter((todo) => todo.completed == true).length || 0;
+    this.notCompletedTodo = this.filteredTodosByUserId?.length ? this.filteredTodosByUserId.length - this.completedTodo : 0;
   }
-
-
 
   openTodoDialog() :void {
     const dialogRef = this.dialog.open(AddTodoDialogComponent, {})
@@ -85,6 +92,8 @@ export class ToDoListComponent implements OnInit{
 
       this.filteredTodosByUserId?.unshift(todoToAdd);
       this.showListOption();
+      this.completedTodo = this.filteredTodosByUserId?.filter((todo) => todo.completed == true).length || 0;
+      this.notCompletedTodo = this.filteredTodosByUserId?.length ? this.filteredTodosByUserId.length - this.completedTodo : 0;
       Swal.fire(`Tood added succsesfuly!`);
       }
     });

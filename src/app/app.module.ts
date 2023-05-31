@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddTodoDialogComponent } from './components/add-todo-dialog/add-todo-dialog.component';
+import { NgChartsModule } from 'ng2-charts';
+import { PieChartComponent } from './components/pie-chart/pie-chart.component';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { AddTodoDialogComponent } from './components/add-todo-dialog/add-todo-di
     AppComponent,
     LoginComponent,
     ToDoListComponent,
-    AddTodoDialogComponent
+    AddTodoDialogComponent,
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { AddTodoDialogComponent } from './components/add-todo-dialog/add-todo-di
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

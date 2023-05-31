@@ -1,0 +1,14 @@
+<div class="dialog-overlay">
+  <div class="dialog-container">
+    <div class="dialog-wrapper">
+      <button class="close-btn f-w-bold pointer" mat-button (click)="closeDialog()">X</button>
+      <p class="f-w-bold">add new todo</p>
+      <form class="add-form" [formGroup]="addTodoForm" (ngSubmit)="submit(addTodoForm)">
+        <input class="okoora-input" type="text" formControlName="title" placeholder="title">
+        <small class="text-danger" *ngIf="(addTodoForm?.get('title')?.hasError('required') && addTodoForm.get('title')?.touched)">title is required.</small>
+
+        <button class="yellow-btn my-15 pointer" type="submit">add todo</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="w-100 d-flex-center my-15">
+
+<div class="display-container border-r-10 shadow">
+  <span class="text-center f-w-bold my-15">Display options</span>
+  <form [formGroup]="optionForm" (change)="showListOption()">
+   <div class="d-flex-center">
+    <div *ngFor="let option of showListOptions; let i = index" class="d-flex">
+
+      <input [id]="'radioBtn' + i" type="radio" formControlName="selectedOption" [value]="option">
+      <label class="yellow-lable radio-label" [for]="'radioBtn' + i"></label>
+
+      <span class="mx-10">{{ option }} todos</span>
+    </div>
+  </div>
+
+    <div class="d-flex-center my-15">
+      <span class="mx-10">hide done todos</span>
+      <input [id]="'checkBtn'" type="checkbox" formControlName="hideDoneTodos">
+      <label class="yellow-lable checkbox-lable" [for]="'checkBtn'"></label>
+    </div>
+  </form>
+
+</div>
+</div>
+
+<div>
+  <div class="w-100 d-flex-center my-15">
+    <button class="yellow-btn" (click)="openTodoDialog()">add new todo</button>
+  </div>
+  <div class="d-flex-center" *ngFor="let todo of filteredTdos; let i = index;">
+    <div class="list">
+      <input [id]="'checkBtn' + i" type="checkbox" [checked]="todo.completed" (change)="changeTodoStatus(todo)">
+      <label class="yellow-lable checkbox-lable" [for]="'checkBtn' + i"></label>
+      <span class="mx-10">{{todo.title}}</span>
+    </div>
+</div>
+
+</div>

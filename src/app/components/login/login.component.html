@@ -1,0 +1,28 @@
+<div class="h-100 w-100 d-flex-center">
+<div class="login-container">
+  <form [formGroup]="loginForm" (ngSubmit)="submit(loginForm)" class="d-flex h-100 w-100">
+    <div class="w-50 d-flex-center flex-column">
+
+
+      <input class="okoora-input" formControlName="username" type="text" placeholder="user name">
+      <small class="text-danger" *ngIf="(loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched)">User name is required.</small>
+
+
+      <input class="okoora-input" formControlName="email" type="text" placeholder="email">
+      <small class="text-danger" *ngIf="(loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched)">Email is required.</small>
+
+      <button type="submit" class="yellow-btn my-15">login</button>
+    </div>
+
+    <div class="w-50 gray-side">
+      <div class="w-50">
+        <h1 class="f-w-bold">Lets Sign In</h1>
+        <h2 class="f-z-15">Pleas enter your username and email</h2>
+    </div>
+
+    </div>
+
+</form>
+
+</div>
+</div>

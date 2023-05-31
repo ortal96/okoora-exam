@@ -1,1 +1,121 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }
+
+
+.d-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.f-w-bold {
+  font-weight: bolder !important;
+}
+
+.f-z-15 {
+  font-size: 15px !important;
+}
+
+.my-15 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+}
+
+.mx-10{
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.border-r-10{
+  border-radius: 10px;
+}
+
+.shadow {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+  0 10px 10px rgba(0,0,0,0.22);
+}
+
+.text-danger {
+  color: red;
+  font-size: x-small;
+  display: block;
+}
+
+.text-center{
+  display: flex;
+  justify-content: center;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.okoora-input {
+  background-color: rgb(232, 229, 229);
+  border-radius: 4px;
+  width: 250px;
+  height: 50px;
+  margin-top: 10px;
+  border: none !important;
+}
+
+.yellow-btn {
+  background-color: rgb(227, 185, 17);
+  border-radius: 4px;
+  height: 50px;
+  width: 100px;
+  border: none !important;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+  0 10px 10px rgba(0,0,0,0.22);
+}
+
+input[type="radio"], input[type="checkbox"]{
+  display: none;
+}
+
+
+label.yellow-lable {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+
+  background-color: #ccc;
+  border: 3px solid #ccc;
+  &.checkbox-lable {
+    border-radius: 4px !important;
+
+  }
+  &.radio-label {
+    border-radius: 50%;
+  }
+}
+
+
+input[type="radio"]:checked + label, input[type="checkbox"]:checked + label{
+  background-color: rgb(227, 185, 17) !important;
+  border: 3px solid #ccc;
+}
+
